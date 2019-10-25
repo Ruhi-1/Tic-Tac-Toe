@@ -1,6 +1,7 @@
 /*----- constants -----*/
-const player1 = o;
-const player2 = x;
+const o = -1;
+const x = 1;
+const MAX_BOX_CLICKED = 8;
 const wincombination = [
     [0, 1, 2],
     [3, 4, 5],
@@ -30,6 +31,15 @@ const wincombination = [
 
 
 /*----- event listeners -----*/
+document.querySelectorAll('td')
+    .addEventListener('click', handleBoxClick);
+
+document.getElementById('replay')
+    .addEventListener('click', handleButtonClick);
+
+document.getElementsByTagName('table')
+    .addEventListener('click', handleBoxClicked);
+
 
 
 
@@ -38,3 +48,6 @@ const wincombination = [
 
 /*----- functions -----*/
 
+function handleBoxClicked(evt)
+
+   

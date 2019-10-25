@@ -45,9 +45,13 @@ td {
     vertical-align: middle;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
-
-
-
-
-
 }
+#replay {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .7rem;
+    margin-top: 2rem;
+    outline: none;
+    cursor: pointer;
+}
+
