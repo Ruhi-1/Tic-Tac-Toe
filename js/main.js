@@ -1,6 +1,5 @@
 /*----- constants -----*/
-const o = -1;
-const x = 1;
+
 const MAX_BOX_CLICKED = 8;
 const wincombination = [
     [0, 1, 2],
@@ -20,7 +19,13 @@ const wincombination = [
 
 /*----- app's state (variables) -----*/
 
+let player1 = "X";
+let player2 = "O";
 
+let currentTurn = [];
+let movesMade = [];
+
+let bx = document.getElementsByClassName(".box");
 
 
 
@@ -31,14 +36,16 @@ const wincombination = [
 
 
 /*----- event listeners -----*/
-document.querySelectorAll('td')
+
+
+
+
+document.querySelector('tbody')
     .addEventListener('click', handleBoxClick);
 
-document.getElementById('replay')
-    .addEventListener('click', handleButtonClick);
+// document.getElementById('replay')
+//     .addEventListener('click', handleButtonClick);
 
-document.getElementsByTagName('table')
-    .addEventListener('click', handleBoxClicked);
 
 
 
@@ -48,6 +55,16 @@ document.getElementsByTagName('table')
 
 /*----- functions -----*/
 
-function handleBoxClicked(evt)
+function handleBoxClick(evt) {
 
-   
+    if(currentTurn === 1) {
+        event.target.innerHTML = player1;
+        event.target.style.color = "blue";
+        curentTurn++;
+    }else {
+        event.target.innerHTML = player2;
+        event.target.style.color = "black";
+        curentTurn--;
+    }
+
+}
