@@ -1,4 +1,6 @@
 /*----- constants -----*/
+let player1 = "X";
+let player2 = "O";
 
 const MAX_BOX_CLICKED = 8;
 const wincombination = [
@@ -19,32 +21,28 @@ const wincombination = [
 
 /*----- app's state (variables) -----*/
 
-let player1 = "X";
-let player2 = "O";
 
-let currentTurn = [];
-let movesMade = [];
 
-let bx = document.getElementsByClassName(".box");
 
 
 
 /*----- cached element references -----*/
-
-
+var currentTurn = document.getElementById('turn');
+const movesMade = document.getElementById('moves');
+const replayBtn = document.getElementById('replay');
 
 
 
 /*----- event listeners -----*/
 
+document.getElementById('replay')
+    .addEventListener('click', handleBoxClick);
 
 
 
 document.querySelector('tbody')
     .addEventListener('click', handleBoxClick);
 
-// document.getElementById('replay')
-//     .addEventListener('click', handleButtonClick);
 
 
 
@@ -57,14 +55,19 @@ document.querySelector('tbody')
 
 function handleBoxClick(evt) {
 
-    if(currentTurn === 1) {
-        event.target.innerHTML = player1;
-        event.target.style.color = "blue";
-        curentTurn++;
-    }else {
-        event.target.innerHTML = player2;
-        event.target.style.color = "black";
-        curentTurn--;
-    }
+if(currentTurn % 2 == 0) {
+    evt.target.innerHTML = player1;
+    evt.target.style.color = "blue";
+    currentTurn++;
+}else {
+    evt.target.innerHTML = player2;
+    evt.target.style.color = "green";
+    currentTurn++;
+}
+};
+
+function handleMoves(eve) {
+ 
 
 }
+
