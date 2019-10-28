@@ -33,22 +33,15 @@ const replayBtn = document.getElementById('replay');
 
 
 
+
+
 /*----- event listeners -----*/
 
-document.getElementById('replay')
-    .addEventListener('click', handleBoxClick);
-
-
-
 document.querySelector('tbody')
-    .addEventListener('click', handleBoxClick);
+    .addEventListener('click', handleBoxClick); 
 
-
-
-
-
-
-
+document.getElementById('replay')
+    .addEventListener('click', replayBtnClick);
 
 
 /*----- functions -----*/
@@ -66,8 +59,11 @@ if(currentTurn % 2 == 0) {
 }
 };
 
-function handleMoves(eve) {
- 
+function replayBtnClick(evt) {
+    var i;
+    for (i = 0; i < 9; i++) {
+        document.getElementById(i).innerHTML = "";
+    }
+};
 
-}
 
