@@ -53,5 +53,15 @@ td {
     margin-top: 2rem;
     outline: none;
     cursor: pointer;
+    border-radius: .5rem;
+
+    
+}
+#replay:hover {
+    background-color: rgb(228, 238, 169);
+    color: red;
 }
 
+td:hover {
+    background-color: rgb(161, 170, 218);
+}
